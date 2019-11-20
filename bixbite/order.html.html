@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head> 
+    <meta author="Nicholas Miller">
+    <meta charset="utf-8">
+    <title>Order Page</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <h1>Order</h1>
+<form id="NewOrderRegistration" onsubmit="return false">
+    <label class="formlabel" for="CustomerName">Name:</label>
+<input type="text" id="CustomerName" name="CustomerName" size="30" maxlength="30"
+       data-rule-required="true"  data-msg-required="Name is Required" >
+<label for="FirstName" ></label>
+<br/>
+<h2>Pizzas</h2>
+
+
+<label class="formlabel">Pizza Type: </label>
+
+<select name="Auto" id="PizzaFlavor" ata-rule-required="true"  data-msg-required="Please select an option">
+    <option value="">Select a flavor!</option>
+    <option value="Pepperoni"> Pepperoni </option>
+    <option value="Cheese">Cheese</option>
+    <option value="The Hog">The Hog</option>
+    <option value="Veggie">Veggie</option>
+    <option value="Hawaiian">Hawaiian</option>
+    <option value="Supreme">Supreme</option>
+</select>
+<br/>
+<label class="formlabel">Pizza Size: </label>
+
+<select name="Auto" id="PizzaSize" ata-rule-required="true"  data-msg-required="Please select an option">
+    <option value="">Select a Size!</option>
+    <option value="Small"> Small ($10.99) </option>
+    <option value="Medium">Medium($12.99)</option>
+    <option value="Large">Large ($15.99)</option>
+</select>
+<br/>
+<label class="formlabel" for="CrustType">Crust Type: </label>
+<label for="Thick"><input type="radio" name="CrustType" id="Thick" value="Thick">Thin</label>
+<label for="Thin"><input type="radio" name="CrustType" id="Thin" value="Thin">Thick</label>
+<br/>
+    <label class="formlabel" for="PizzaQuantity">Quantity:</label>
+<input type="number" id="pQuantity" name="pQuanity" size="30" maxlength="30" value="0"
+       data-rule-required="true"  data-msg-required="Name is Required" >
+<label for="HouseSalad" ></label>
+<br/>
+
+<h2>Sides</h2>
+<label class="formlabel">Breadsticks: </label>
+<select name="Auto" id="Breadsticks" ata-rule-required="true"  data-msg-required="Please select an option">
+    <option value="">None</option>
+    <option value="Regular"> Regular ($3.99) </option>
+    <option value="Stuffed"> Stuffed ($5.99)</option>
+</select>
+<br/>
+<label class="formlabel" for="BreadstickQuantity">Breadstick Quantity:</label>
+<input type="number" id="bQuantity" name="bQuanity" size="30" maxlength="30" value="0"
+       data-rule-required="true"  data-msg-required="Name is Required" >
+<label for="HouseSalad" ></label>
+<br/>
+    <label class="formlabel" for="HouseSalad">House Salad servings ($2.99 per serving):</label>
+<input type="number" id="HouseSalad" name="HouseSalad" size="30" maxlength="30" value="0"
+       data-rule-required="true"  data-msg-required="Name is Required" >
+<label for="HouseSalad" ></label>
+<br/>
+
+<h2>Drinks</h2>
+<select name="Auto" id="DrinkFlavor" ata-rule-required="true"  data-msg-required="Please select an option">
+    <option value="">Choose a drink for $1.50</option>
+    <option value="Dr. Pepper"> Dr. Pepper ($1.50) </option>
+    <option value="Coke">Coke ($1.50)</option>
+    <option value="Diet Coke">Diet Coke ($1.50)</option>
+    <option value="Iced Tea">Iced Tea ($1.50)</option>
+    <option value="Sprite">Sprite ($1.50)</option>
+</select>
+<br/>
+    <label class="formlabel" for="dQuantity">Drink Quantity</label>
+<input type="number" id="dQuantity" name="HouseSalad" size="30" maxlength="30" value="0"
+       data-rule-required="true"  data-msg-required="Name is Required" >
+<label for="dQuantity" ></label>
+<br/>
+
+<h4>Additional Instructions:</h4>
+<textarea id="Comments" name="Comments" rows="10" cols="30">
+</textarea>
+<br>
+<div id="OrderTable" class="OrderTable">
+<table id="thisTable">
+<caption>Order Cart</caption>
+<thead>
+    <tr>
+        <th scope = "col">Flavor</th>
+        <th scope = "col">Size</th>
+        <th scope = "col">Crust</th>
+        <th scope = "col">Quantity</th>
+        <th scope = "col">Breadsticks</th>
+        <th scope = "col">Quantity</th>
+        <th scope = "col">HouseSalad</th>
+        <th scope = "col">Drink</th>
+        <th scope = "col">Quantity</th>
+        <th scope = "col">Total</th>
+    </tr>
+</thead>
+<tbody></tbody>
+</table>
+</div>
+
+<input type="submit" value="Add to cart" onclick="AddToCart()">
+<input type="submit" value="Submit Order" onclick="CreateOrder()">
+</form>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+<script src="assets/scripts/order.js"></script>
+<script src="assets/scripts/cart.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+</body>
+</html>

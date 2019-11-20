@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SuperSlice</title>
+    <meta charset="UTF-8" />
+    <meta name="description" content="providing a quick and easy pizza haven for those on the rush" />
+    <meta name="author" content="bixbite" />
+    <meta name="robots" content="noindex" />
+    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+</head>
+
+<body>
+    <main class="container">
+        <header class="primary">
+            <h1><img src="assets/img/super_slice_logo_2.png" alt="Super Slice" /></h1>
+            <nav role="navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="order.html">Order</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!--#header-->
+        <section id="content">
+            <div class="page-summary">
+                <h2>About Us</h2>
+                <p>
+                    Our chef, Donatello Scarsi, was born in Pontinia, Italy. He first developed culinary skills producing and selling cheese. It was in Naples, however—the birthplace of pizza just an hour away from his hometown—where Scarsi went to study the art and craft
+                    of the pizzaiolo. After learning all things Neapolitan, among some of the best pizza makers in the world, Scarsi came to the United States and opened several successful pizzerias before settling in Little Rock Arkansas.
+                </p>
+            </div>
+            <!-- page summary -->
+
+            <script>
+                // Initialize and add the map
+                function initMap() {
+                    // The location of Uluru
+                    var uluru = { lat: -25.344, lng: 131.036 };
+                    // The map, centered at Uluru
+                    var map = new google.maps.Map(
+                        document.getElementById('map'), { zoom: 4, center: uluru });
+                    // The marker, positioned at Uluru
+                    var marker = new google.maps.Marker({ position: uluru, map: map });
+                }
+            </script>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3279.205128690588!2d-92.34303528433665!3d34.725223480428085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87d2a4f5eba5f77d%3A0x1bffbdb05017ff52!2sEngineering+and+Information+Technology%2C+Little+Rock%2C+AR+72204!5e0!3m2!1sen!2sus!4v1556596816284!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <script async defer src="https://maps.googleapis.com/maps/api/js?key=
+AIzaSyDK3AfmGqxn7NekKeTk6WhLCBjiV0c9szE&callback=initMap">
+            </script>
+
+        </section>
+        <!-- content -->
+        <nav id="footer-nav">
+            <ul>
+                <li><a href="about.html">For more information click here!</a></li>
+                <li><a href="mailto:axmurguia@ualr.edu">Have any concerns? Email us!</a></li>
+                <li><a href="#top">Back to the top</a></li>
+            </ul>
+        </nav>
+        <!--nav.primary-->
+        <footer id="colophon" class="primary">
+            <h6>&copy;2019 Super Slice</h6>
+        </footer>
+        <!--footer.primary-->
+    </main>
+    <!--.container-->
+</body>
+
+</html>

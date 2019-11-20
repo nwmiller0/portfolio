@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>SuperSlice</title>
+  <meta charset="UTF-8" />
+  <meta name="description" content="providing a quick and easy pizza haven for those on the rush" />
+  <meta name="author" content="bixbite" />
+  <meta name="robots" content="noindex" />
+  <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+</head>
+
+<body>
+  <main class="container">
+    <header class="primary">
+      <h1><img src="assets/img/super_slice_logo_2.png" alt="Super Slice" /></h1>
+      <nav role="navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="order.html">Order</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!--#header-->
+    <section id="content">
+      
+      <div class="outerbox">
+      <h2 id="about-heading">Ordering</h2>
+      <!--(Primary Content Heading)-->
+      <div class="innerbox">
+      <form id="NewOrderRegistration" onsubmit="return false">
+        <label class="formlabel" for="CustomerName">Name:</label>
+        <input type="text" id="CustomerName" name="CustomerName" size="30" maxlength="30" data-rule-required="true" data-msg-required="Name is Required">
+        <label for="FirstName"></label>
+        <br/>
+        <h3>Pizzas</h3>
+
+
+        <label class="formlabel">Pizza Flavor: </label>
+
+        <select name="Auto" id="PizzaFlavor" ata-rule-required="true" data-msg-required="Please select an option">
+    <option value="">Select a flavor!</option>
+    <option value="Pepperoni"> Pepperoni </option>
+    <option value="Cheese">Cheese</option>
+    <option value="The Hog">The Hog</option>
+    <option value="Veggie">Veggie</option>
+    <option value="Hawaiian">Hawaiian</option>
+    <option value="Supreme">Supreme</option>
+</select>
+        <br/>
+        <label class="formlabel">Pizza Size: </label>
+
+        <select name="Auto" id="PizzaSize" ata-rule-required="true" data-msg-required="Please select an option">
+    <option value="">Select a Size!</option>
+    <option value="Small"> Small ($10.99) </option>
+    <option value="Medium">Medium($12.99)</option>
+    <option value="Large">Large ($15.99)</option>
+</select>
+        <br/>
+        <script>
+          if (document.getElementById("PizzaFlavor") == ""){
+            document.getElementById("Thick").disabled = true;
+            document.getElementById("Thin").disabled = true;
+          }
+          if (document.getElementById("PizzaFlavor") != ""){
+            document.getElementById("Thick").disabled = false;
+            document.getElementById("Thin").disabled = false;
+          }
+        </script>
+        <label class="formlabel" for="CrustType">Crust Type: </label>
+        <label for="Thick"><input type="radio" name="CrustType" id="Thick" value="Thick">Thin</label>
+        <label for="Thin"><input type="radio" name="CrustType" id="Thin" value="Thin">Thick</label>
+        <br/>
+        <label class="formlabel" for="PizzaQuantity">Quantity:</label>
+        <input type="number" id="pQuantity" name="pQuanity" size="30" maxlength="30" value="0" data-rule-required="true" data-msg-required="Name is Required">
+        <label for="HouseSalad"></label>
+        <br/>
+
+        <h3>Sides</h3>
+        <label class="formlabel">Breadsticks: </label>
+        <select name="Auto" id="Breadsticks" ata-rule-required="true" data-msg-required="Please select an option">
+    <option value="None" selected="selected">None</option>
+    <option value="Regular"> Regular ($3.99) </option>
+    <option value="Stuffed"> Stuffed ($5.99)</option>
+</select>
+        <br/>
+        <label class="formlabel" for="BreadstickQuantity">Breadstick Quantity:</label>
+        <input type="number" id="bQuantity" name="bQuanity" size="30" maxlength="30" value="0" data-rule-required="true" data-msg-required="Name is Required">
+        <label for="HouseSalad"></label>
+        <br/>
+        <label class="formlabel" for="HouseSalad">House Salad servings ($2.99 per serving):</label>
+        <input type="number" id="HouseSalad" name="HouseSalad" size="30" maxlength="30" value="0" data-rule-required="true" data-msg-required="Name is Required">
+        <label for="HouseSalad"></label>
+        <br/>
+
+        <h3>Drinks</h3>
+        <select name="Auto" id="DrinkFlavor" ata-rule-required="true" data-msg-required="Please select an option">
+    <option value="">Choose a drink for $1.50</option>
+    <option value="None">None</option>
+    <option value="Dr. Pepper"> Dr. Pepper ($1.50) </option>
+    <option value="Coke">Coke ($1.50)</option>
+    <option value="Diet Coke">Diet Coke ($1.50)</option>
+    <option value="Iced Tea">Iced Tea ($1.50)</option>
+    <option value="Sprite">Sprite ($1.50)</option>
+</select>
+        <br/>
+        <label class="formlabel" for="dQuantity">Drink Quantity</label>
+        <input type="number" id="dQuantity" name="HouseSalad" size="30" maxlength="30" value="0" data-rule-required="true" data-msg-required="Name is Required">
+        <label for="dQuantity"></label>
+        <br/>
+
+        <label class="formlabel" for="Comments">Additional Instructions:</label>
+        <textarea id="Comments" name="Comments" rows="10" cols="30">
+</textarea>
+        <br>
+        <input type="submit" value="Add to cart" onclick="AddToCart()" class="input-button">
+        <div id="OrderTable" class="OrderTable">
+          <table id="thisTable">
+            <caption>Order Cart</caption>
+            <thead>
+              <tr>
+                <th scope="col">Flavor</th>
+                <th scope="col">Size</th>
+                <th scope="col">Crust</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Breadsticks</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">HouseSalad</th>
+                <th scope="col">Drink</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        </div>
+        <input type="submit" value="Submit Order" onclick="createOrder()" class="input-button">
+      </form>
+      <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+      <script src="assets/scripts/order.js"></script>
+      <script src="assets/scripts/cart.js"></script>
+      <script src="assets/scripts/scripts.js"></script>
+      <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+      </div>
+    </section>
+    <!-- content -->
+    <nav id="footer-nav">
+      <ul>
+        <li><a href="about.html">For more information click here!</a></li>
+        <li><a href="mailto:axmurguia@ualr.edu">Have any concerns? Email us!</a></li>
+        <li><a href="#top">Back to the top</a></li>
+      </ul>
+    </nav>
+    <!--nav.primary-->
+    <footer id="colophon" class="primary">
+      <h6>&copy;2019 Super Slice</h6>
+    </footer>
+    <!--footer.primary-->
+  </main>
+  <!--.container-->
+</body>
+
+</html>
